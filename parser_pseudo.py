@@ -80,5 +80,3 @@ def create_ads_raw(ads_data=None):
         logger.info(f'Данные сохранены в ads_raw.json.')
     except Exception as e:
         logger.error(f'Ошибка при сохранении: {e}')
-
-create_ads_raw()
