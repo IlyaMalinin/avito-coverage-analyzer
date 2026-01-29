@@ -1,0 +1,1 @@
+(self.webpackChunkavito_desktop_site=self.webpackChunkavito_desktop_site||[]).push([["1172"],{625(e,n,t){window.addEventListener("load",function(){t.e("1154").then(t.t.bind(t,3049,23))})}},function(e){e.O(0,["1095","1268","1472","1473","1477","1478","1521"],function(){return e(e.s=625)}),e.O()}]);
