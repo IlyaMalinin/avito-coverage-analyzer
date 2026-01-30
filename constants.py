@@ -2,3 +2,8 @@ URL = 'https://www.avito.ru/sankt-peterburg/zapchasti_i_aksessuary/zapchasti/dly
 HEADERS = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
 }
+API_URL = 'https://top505.ru/api/item_batch'
+API_KEY = 'PXonxrdz8g45#rd61d5e732Ap4uhf/Sc='
+PARSER_FILE_NAME = 'ads_raw.json'
+ENRICHER_FILE_NAME = 'ads_enriched.json'
+FILES_FOR_PARSING = ('site1.html', 'site2.html')

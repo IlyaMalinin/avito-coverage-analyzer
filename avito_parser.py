@@ -1,10 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
-import json
 import logging
 
-from constants import URL, HEADERS
+from constants import URL, HEADERS, PARSER_FILE_NAME
 from logging_config import setup_logging
+from save_file_json import create_file
 
 setup_logging()
 logger = logging.getLogger(__name__)
@@ -57,24 +57,4 @@ def parser_avito():
 
         all_ads_data.append(ad_data)
     logger.info(f"Успешно собрано: {len(all_ads_data)} объявлений.")
-    return all_ads_data
-
-
-def create_ads_raw(ads_data=None):
-    """Сохраняет данные в JSON файл."""
-
-    if ads_data is None:
-        ads_data = parser_avito()
-
-    logger.info("Сохранение данных в JSON.")
-
-    if not ads_data:
-        logger.error("Нет данных для сохранения!")
-        return
-
-    try:
-        with open('ads_raw.json', 'w', encoding='utf-8') as json_file:
-            json.dump(ads_data, json_file, indent=2, ensure_ascii=False)
-        logger.info(f"Данные сохранены в ads_raw.json.")
-    except Exception as e:
-        logger.error(f"Ошибка при сохранении: {e}")
+    create_file(all_ads_data, PARSER_FILE_NAME)
